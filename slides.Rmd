@@ -1,0 +1,12 @@
+---
+title: "SESUG - Intro to R"
+output: 
+  html_document:
+    css: ["xaringan-themer.css", "slides.css"]
+---
+
+
+- [Welcome!](u1-d01-welcome/index.html)
+
+- [Visualising data with ggplot2](u2-d02-ggplot2/index.html)
+

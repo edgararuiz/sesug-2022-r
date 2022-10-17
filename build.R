@@ -44,3 +44,5 @@ if(dir_exists(docs_slides)) {
   dir_delete(docs_slides)
   dir_copy("slides", docs_slides)
 }
+
+render("slides.Rmd", output_dir = "slides", output_file = "index.html")
