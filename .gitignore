@@ -28,4 +28,4 @@ vignettes/*.pdf
 .Renviron
 dsb-repo
 dsb_repo
-slides_folder
+/slides
