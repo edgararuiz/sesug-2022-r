@@ -58,7 +58,8 @@ layout: true
   
 <div class="my-footer">
 <span>
-<a href="https://datasciencebox.org" target="_blank">datasciencebox.org</a>
+| <a href="https://datasciencebox.org" target="_blank">datasciencebox.org</a> |
+<a href="https://github.com/edgararuiz/sesug-2022-r" target="_blank">SESUG 2022</a> |
 </span>
 </div> 
 

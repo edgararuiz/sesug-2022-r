@@ -11,3 +11,17 @@ output:
 - [Visualising data with ggplot2](u2-d02-ggplot2/index.html)
 
 - [Grammar of data wrangling](u2-d06-grammar-wrangle/index.html)
+
+- [Data Import](u2-d12-data-import/index.html)
+
+- [Data Recode](u2-d13-data-record/index.html)
+
+- [Effective Dataviz](u2-d14-effective-dataviz/index.html)
+
+- [Web Scrape](u2-d18-webscrape/index.html)
+
+- [Functions](u2-d21-functions/index.html)
+
+- [Iteration](u2-d22-iteration/index.html)
+
+- [Interactive Web Apps](u5-d03-interactive-web-app/index.html)
