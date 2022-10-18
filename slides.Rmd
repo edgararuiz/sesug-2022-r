@@ -10,3 +10,4 @@ output:
 
 - [Visualising data with ggplot2](u2-d02-ggplot2/index.html)
 
+- [Grammar of data wrangling](u2-d06-grammar-wrangle/index.html)
