@@ -8,21 +8,26 @@ repo_folder <- "dsb_repo"
 repo <- "https://github.com/rstudio-education/datascience-box"
 if(!dir_exists(repo_folder)) git2r::clone(repo, repo_folder)
 
-slides_folder <- "slides"
+docs_folder <- path("docs")
+slides_folder <- path(docs_folder, "slides")
 if(!dir_exists(slides_folder)) dir_create(slides_folder)
 
 source_slides <- path(repo_folder, "course-materials", "_slides")
 
-c("setup.Rmd", "slides.css", "xaringan-themer.css", "xaringan-themer.R", "dsbox-hex.png") %>% 
+c("setup.Rmd", "slides.css", "xaringan-themer.css", 
+  "xaringan-themer.R", "dsbox-hex.png"
+  ) %>% 
   map(~{
     try(
       file_copy(path(source_slides, .x), path(slides_folder))  
     )
   })
 
-c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", "u2-d12-data-import",
-  "u2-d13-data-recode", "u2-d14-effective-dataviz", "u2-d18-web-scrape", "u2-d21-functions",
-  "u2-d22-iteration", "u5-d03-interactive-web-app") %>% 
+c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", 
+  "u2-d12-data-import", "u2-d13-data-recode", "u2-d14-effective-dataviz", 
+  "u2-d18-web-scrape", "u2-d21-functions", "u2-d22-iteration", 
+  "u5-d03-interactive-web-app"
+  ) %>% 
   map(~{
     try(
       dir_copy(path(source_slides, .x), path(slides_folder))
@@ -33,9 +38,8 @@ c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", "u2-d12-data-imp
     if(file_exists(html_file)) file_delete(html_file)
   })
 
-file_copy("slides.Rmd", slides_folder, overwrite = TRUE)
 
-dir_info(slides_folder, recurse = 3, glob = "*.Rmd") %>%  
+dir_info(docs_folder, glob = "*.Rmd") %>%  
   filter(!str_detect(path, "setup")) %>%
   #head(1) %>% 
   pull(path) %>% 
@@ -48,10 +52,6 @@ dir_info(slides_folder, recurse = 3, glob = "*.Rmd") %>%
     rstudioapi::jobRunScript(temp_file, name = .x)
   })
 
-Sys.sleep(22)
-docs_slides <- path("docs/slides")
-if(dir_exists(docs_slides)) dir_delete(docs_slides)
-dir_copy(slides_folder, docs_slides)
 
 
 

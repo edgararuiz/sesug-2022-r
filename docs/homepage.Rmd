@@ -1,0 +1,9 @@
+---
+title: "SESUG - Intro to R"
+output: 
+  html_document:
+    css: ["slides/xaringan-themer.css", "slides/slides.css"]
+---
+
+
+- [Slides](slides/index.html)
