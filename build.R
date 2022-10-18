@@ -23,7 +23,6 @@ c("setup.Rmd", "slides.css", "xaringan-themer.css", "xaringan-themer.R", "dsbox-
 c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", "u2-d12-data-import",
   "u2-d13-data-recode", "u2-d14-effective-dataviz", "u2-d18-web-scrape", "u2-d21-functions",
   "u2-d22-iteration", "u5-d03-interactive-web-app") %>% 
-  head(1) %>% 
   map(~{
     try(
       dir_copy(path(source_slides, .x), path(slides_folder))
@@ -50,6 +49,8 @@ dir_info(slides_folder, recurse = 3, glob = "*.Rmd") %>%
   })
 
 docs_slides <- path("docs/slides")
+
+
 if(dir_exists(docs_slides)) dir_delete(docs_slides)
 dir_copy(slides_folder, docs_slides)
 
