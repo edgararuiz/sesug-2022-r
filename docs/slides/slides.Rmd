@@ -18,7 +18,7 @@ output:
 
 - [Effective Dataviz](u2-d14-effective-dataviz/index.html)
 
-- [Web Scrape](u2-d18-webscrape/index.html)
+- [Web Scrape](u2-d18-web-scrape/index.html)
 
 - [Functions](u2-d21-functions/index.html)
 

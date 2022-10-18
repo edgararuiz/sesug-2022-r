@@ -48,9 +48,8 @@ dir_info(slides_folder, recurse = 3, glob = "*.Rmd") %>%
     rstudioapi::jobRunScript(temp_file, name = .x)
   })
 
+Sys.sleep(22)
 docs_slides <- path("docs/slides")
-
-
 if(dir_exists(docs_slides)) dir_delete(docs_slides)
 dir_copy(slides_folder, docs_slides)
 
