@@ -1,0 +1,212 @@
+---
+title: "Recoding data"
+---
+
+
+```{r}
+library(tidyverse)
+library(scales)
+```
+
+# Case study: Religion and income
+
+## Read data 
+
+```{r}
+rel_inc <- tibble::tribble(
+                  ~`Religious tradition`, ~`Less than $30,000`, ~`$30,000-$49,999`, ~`$50,000-$99,999`, ~`$100,000 or more`, ~`Sample Size`,
+                            "Buddhist",                0.36,              0.18,              0.32,               0.13,          233,
+                            "Catholic",                0.36,              0.19,              0.26,               0.19,         6137,
+              "Evangelical Protestant",                0.35,              0.22,              0.28,               0.14,         7462,
+                               "Hindu",                0.17,              0.13,              0.34,               0.36,          172,
+       "Historically Black Protestant",                0.53,              0.22,              0.17,               0.08,         1704,
+                   "Jehovah's Witness",                0.48,              0.25,              0.22,               0.04,          208,
+                              "Jewish",                0.16,              0.15,              0.24,               0.44,          708,
+                 "Mainline Protestant",                0.29,              0.20,              0.28,               0.23,         5208,
+                              "Mormon",                0.27,              0.20,              0.33,               0.20,          594,
+                              "Muslim",                0.34,              0.17,              0.29,               0.20,          205,
+                  "Orthodox Christian",                0.18,              0.17,              0.36,               0.29,          155,
+  "Unaffiliated (religious \"nones\")",                0.33,              0.20,              0.26,               0.21,         6790
+  )
+
+```
+
+```{r}
+rel_inc
+```
+
+## Rename columns
+
+```{r}
+rel_inc %>%
+  rename( 
+    religion = `Religious tradition`, 
+    n = `Sample Size` 
+  ) 
+```
+
+
+## Pivot longer
+
+```{r}
+rel_inc %>%
+  rename(
+    religion = `Religious tradition`,
+    n = `Sample Size`
+  ) %>%
+  pivot_longer( 
+    cols = -c(religion, n),   # all but religion and n 
+    names_to = "income",  
+    values_to = "proportion" 
+  ) 
+```
+
+
+## Calculate frequencies
+
+```{r}
+rel_inc %>%
+  rename(
+    religion = `Religious tradition`,
+    n = `Sample Size`
+  ) %>%
+  pivot_longer(
+    cols = -c(religion, n), 
+    names_to = "income", 
+    values_to = "proportion"
+  ) %>%
+  mutate(frequency = round(proportion * n)) 
+```
+
+## Save data
+
+```{r}
+rel_inc_long <- rel_inc %>% 
+  rename(
+    religion = `Religious tradition`,
+    n = `Sample Size`
+  ) %>%
+  pivot_longer(
+    cols = -c(religion, n), 
+    names_to = "income", 
+    values_to = "proportion"
+  ) %>%
+  mutate(frequency = round(proportion * n))
+```
+
+
+## Barplot
+
+```{r}
+ggplot(rel_inc_long, aes(y = religion, x = frequency)) +
+  geom_col()
+```
+
+## Recode religion
+
+
+```{r}
+rel_inc_long <- rel_inc_long %>%
+  mutate(religion = case_when(
+    religion == "Evangelical Protestant"           ~ "Ev. Protestant",
+    religion == "Historically Black Protestant"    ~ "Hist. Black Protestant",
+    religion == 'Unaffiliated (religious "nones")' ~ "Unaffiliated",
+    TRUE                                           ~ religion
+  ))
+```
+
+```{r out.width="65%", echo=FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency)) + 
+  geom_col()
+```
+
+## Reverse religion order
+
+```{r}
+rel_inc_long <- rel_inc_long %>%
+  mutate(religion = fct_rev(religion)) 
+```
+
+```{r out.width="65%", echo=FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency)) + 
+  geom_col()
+```
+
+## Add income
+
+
+```{r rel-income, out.width = "65%", echo = FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) + 
+  geom_col() 
+```
+
+## Fill bars
+
+```{r rel-income-fill, out.width = "65%", echo = FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill")
+```
+
+```{r ref.label = "rel-income-fill", fig.show = "hide"}
+```
+
+## Change colors
+
+```{r rel-income-fill-viridis, out.width = "65%", echo = FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill") +
+  scale_fill_viridis_d()
+```
+
+```{r ref.label = "rel-income-fill-viridis", fig.show = "hide"}
+```
+
+## Change theme
+
+```{r rel-income-fill-viridis-minimal, out.width = "65%", echo = FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill") +
+  scale_fill_viridis_d() +
+  theme_minimal() 
+```
+
+## Move legend to the bottom
+
+```{r bottom-legend, out.width = "65%", echo = FALSE}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Legend adjustments
+
+```{r legend-adjust, fig.show="hide"}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) 
+```
+
+
+## Fix labels
+
+
+```{r fix-labels, fig.show="hide"}
+ggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) +
+  geom_col(position = "fill") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
+  labs(
+    x = "Proportion", y = "", 
+    title = "Income distribution by religious group", 
+    subtitle = "Source: Pew Research Center, Religious Landscape Study", 
+    fill = "Income" 
+    )
+```
+
