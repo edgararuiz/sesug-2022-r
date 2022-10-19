@@ -1,0 +1,123 @@
+---
+title: "Grammar of data wrangling"
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+# Grammar of data wrangling
+
+
+## A grammar of data wrangling...
+
+## Data: Hotel bookings
+
+```{r}
+hotels <- read_csv("data/hotels.csv")
+```
+
+## First look: Variables
+
+```{r}
+names(hotels)
+```
+
+
+## Second look: Overview
+
+```{r}
+glimpse(hotels)
+```
+
+## Select a single column
+
+
+```{r}
+select(hotels, lead_time)
+```
+
+
+
+## Select a single column
+
+
+```{r}
+select( #<<
+  hotels, 
+  lead_time
+  )
+```
+
+
+## Select a single column
+
+
+```{r}
+select( 
+  hotels, #<<
+  lead_time
+  )
+```
+
+
+
+
+## Select multiple columns
+
+
+```{r}
+select(hotels, hotel, lead_time)
+```
+
+
+## Data wrangling, step-by-step
+
+```{r}
+hotels %>%
+  select(hotel, lead_time)
+```
+
+
+```{r}
+hotels %>%
+  select(hotel, lead_time) %>%
+  arrange(desc(lead_time))
+```
+
+# Pipes
+
+## What is a pipe?
+
+```{r}
+hotels %>% #<<
+  select(hotel, lead_time) %>%
+  arrange(desc(lead_time))
+```
+
+## What is a pipe?
+
+```{r}
+hotels %>%
+  select(hotel, lead_time) %>% #<<
+  arrange(desc(lead_time))
+```
+
+## How does a pipe work?
+
+```{r}
+#| eval: false
+park(drive(start_car(find("keys")), to = "work"))
+```
+
+
+```{r}
+#| eval: false
+find("keys") %>%
+  start_car() %>%
+  drive(to = "work") %>%
+  park()
+```
+
+
