@@ -39,7 +39,7 @@ c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle",
   })
 
 
-dir_info(docs_folder, glob = "*.Rmd") %>%  
+dir_info(docs_folder, glob = "*.Rmd", recurse = TRUE) %>%  
   filter(!str_detect(path, "setup")) %>%
   #head(1) %>% 
   pull(path) %>% 
