@@ -1,0 +1,75 @@
+---
+title: Importing data *(from other statistical software)*
+subtitle: "<br><br> SESUG 2022"
+author: "[Edgar Ruiz](https://github.com/edgararuiz)"
+output:
+  xaringan::moon_reader:
+    css: ["../xaringan-themer.css", "../slides-sesug.css"]
+    lib_dir: libs
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-light
+      countIncrementalSlides: false
+---
+
+```{r child = "../setup-sesug.Rmd"}
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(skimr)
+library(knitr)
+library(DT)
+library(here)
+```
+
+## The `haven` package
+
+.pull-left[
+- **SAS**
+  - `read_sas()` reads *sas7bdat* files, and  *sas7bcat* files
+  - `read_xpt()` reads SAS transport files, versions 5 & 8
+  
+- **SPSS**
+
+- **Stata** 
+]
+.pull-right[
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("img/haven.png")
+```
+
+]
+
+---
+
+## Output
+
+* Are [tibbles](https://github.com/tidyverse/tibble), which have a better print
+  method for very long and very wide files.
+  
+* Translate value labels into a new `labelled()` class, which preserves the
+  original semantics, and can easily be coerced to factors with `as_factor()`.
+  
+* Special missing values are preserved. See the [Conversion semantics](https://haven.tidyverse.org/articles/semantics.html) on the `haven`'s
+  package official site.
+
+* Dates and times are converted to R date/time classes. Character vectors are
+  not converted to factors.
+
+---
+
+## Other packages
+
+* [foreign](https://cran.r-project.org/package=foreign) reads from 
+  SAS XPORT, SPSS, and Stata (up to version 12) files.
+
+* [readstat13](https://cran.r-project.org/package=readstata13) reads from 
+  and writes to all Stata file format versions.
+
+* [sas7bdat](https://cran.r-project.org/package=sas7bdat) reads from
+  SAS7BDAT files.
+  

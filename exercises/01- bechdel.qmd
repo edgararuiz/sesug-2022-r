@@ -1,7 +1,24 @@
 ---
 title: "Bechdel"
 author: "Mine Çetinkaya-Rundel"
-format: html
+
+execute: 
+  echo: true
+  eval: true  
+  message: true
+  warning: true
+
+format: 
+  html:
+    fig-height: 5
+    fig-dpi: 300
+    fig-align: center
+    
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>"
+    
 editor: visual
 ---
 

@@ -6,4 +6,27 @@ output:
 ---
 
 
-- [Slides](slides/index.html)
+## Agenda
+
+
+- [Welcome!](slides/u1-d01-welcome/index.html)
+
+- [Tookit](slides/u1-d02-toolkit-r/index.html)
+
+- [Visualising data with ggplot2](slides/u2-d02-ggplot2/index.html)
+
+- [Grammar of data wrangling](slides/u2-d06-grammar-wrangle/index.html)
+
+- [Data Import](slides/u2-d12-data-import/index.html)
+
+- [Data Import (Part II)](slides/u2-d12-data-import-sas/index.html)
+
+- [Data Recode](slides/u2-d13-data-recode/index.html)
+
+- [Effective Dataviz](slides/u2-d14-effective-dataviz/index.html)
+
+- [Web Scrape](slides/u2-d18-web-scrape/index.html)
+
+- [Functions](slides/u2-d21-functions/index.html)
+
+- [Iteration](slides/u2-d22-iteration/index.html)
