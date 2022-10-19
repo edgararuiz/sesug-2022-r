@@ -23,7 +23,7 @@ c("setup.Rmd", "slides.css", "xaringan-themer.css",
     )
   })
 
-c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", 
+c("u1-d01-welcome", "u1-d02-toolkit-r", "u2-d02-ggplot2", "u2-d06-grammar-wrangle", 
   "u2-d12-data-import", "u2-d13-data-recode", "u2-d14-effective-dataviz", 
   "u2-d18-web-scrape", "u2-d21-functions", "u2-d22-iteration", 
   "u5-d03-interactive-web-app"
@@ -41,7 +41,8 @@ c("u1-d01-welcome", "u2-d02-ggplot2", "u2-d06-grammar-wrangle",
 
 dir_info(docs_folder, glob = "*.Rmd", recurse = TRUE) %>%  
   filter(!str_detect(path, "setup")) %>%
-  #head(1) %>% 
+  #head(1) %>%
+  #filter(str_detect(path, "toolkit-r")) %>% 
   pull(path) %>% 
   walk(~{
     temp_file <- path(tempfile(), ext = "R")
