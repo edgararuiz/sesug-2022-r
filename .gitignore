@@ -29,3 +29,5 @@ vignettes/*.pdf
 dsb-repo
 dsb_repo
 /slides
+tidymodels-repo
+.DS_Store

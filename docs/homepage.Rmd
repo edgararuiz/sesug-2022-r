@@ -18,26 +18,28 @@ output:
 
 <img src="slides/u1-d02-toolkit-r/img/r-logo.png" align="right" alt="" width="300" />
 
+1. [Tookit](slides/u1-d02-toolkit-r/index.html){target="_blank"}
 
-1. [Tookit](slides/u1-d02-toolkit-r/index.html)
+1. [Visualising data with ggplot2](slides/u2-d02-ggplot2/index.html){target="_blank"}
 
-1. [Visualising data with ggplot2](slides/u2-d02-ggplot2/index.html)
+1. [Grammar of data wrangling](slides/u2-d06-grammar-wrangle/index.html){target="_blank"}
 
-1. [Grammar of data wrangling](slides/u2-d06-grammar-wrangle/index.html)
+1. [Data Import](slides/u2-d12-data-import/index.html){target="_blank"}
 
-1. [Data Import](slides/u2-d12-data-import/index.html)
+1. [Data Import (Part II)](slides/u2-d12-data-import-sas/index.html){target="_blank"}
 
-1. [Data Import (Part II)](slides/u2-d12-data-import-sas/index.html)
+1. [Data Recode](slides/u2-d13-data-recode/index.html){target="_blank"}
 
-1. [Data Recode](slides/u2-d13-data-recode/index.html)
+1. [Effective Dataviz](slides/u2-d14-effective-dataviz/index.html){target="_blank"}
 
-1. [Effective Dataviz](slides/u2-d14-effective-dataviz/index.html)
+1. [Functions](slides/u2-d21-functions/index.html){target="_blank"}
 
-1. [Web Scrape](slides/u2-d18-web-scrape/index.html)
+1. [Iteration](slides/u2-d22-iteration/index.html){target="_blank"}
 
-1. [Functions](slides/u2-d21-functions/index.html)
+1. [Intro to Tidymodels](slides/tidymodels/01-introduction.html){target="_blank"}
 
-1. [Iteration](slides/u2-d22-iteration/index.html)
+1. [Data Budget](slides/tidymodels/02-data-budget.html){target="_blank"}
 
+1. [What makes a model](slides/tidymodels/03-what-makes-a-model.html){target="_blank"}
 
-
+1. [Evaluating Models](slides/tidymodels/04-evaluating-models.html){target="_blank"}
