@@ -1,32 +1,43 @@
 ---
-title: "SESUG - Intro to R"
+title: "R The Multi-Tool"
+subtitle: "Southeast SAS User Group Conference 2022"
 output: 
   html_document:
-    css: ["slides/xaringan-themer.css", "slides/slides.css"]
+    theme: flatly
+    css: "slides.css"
 ---
+
+<br/>
 
 
 ## Agenda
 
+<br/>
 
-- [Welcome!](slides/u1-d01-welcome/index.html)
+1. [Welcome!](slides/u1-d01-welcome/index.html){target="_blank"}
 
-- [Tookit](slides/u1-d02-toolkit-r/index.html)
+<img src="slides/u1-d02-toolkit-r/img/r-logo.png" align="right" alt="" width="300" />
 
-- [Visualising data with ggplot2](slides/u2-d02-ggplot2/index.html)
 
-- [Grammar of data wrangling](slides/u2-d06-grammar-wrangle/index.html)
+1. [Tookit](slides/u1-d02-toolkit-r/index.html)
 
-- [Data Import](slides/u2-d12-data-import/index.html)
+1. [Visualising data with ggplot2](slides/u2-d02-ggplot2/index.html)
 
-- [Data Import (Part II)](slides/u2-d12-data-import-sas/index.html)
+1. [Grammar of data wrangling](slides/u2-d06-grammar-wrangle/index.html)
 
-- [Data Recode](slides/u2-d13-data-recode/index.html)
+1. [Data Import](slides/u2-d12-data-import/index.html)
 
-- [Effective Dataviz](slides/u2-d14-effective-dataviz/index.html)
+1. [Data Import (Part II)](slides/u2-d12-data-import-sas/index.html)
 
-- [Web Scrape](slides/u2-d18-web-scrape/index.html)
+1. [Data Recode](slides/u2-d13-data-recode/index.html)
 
-- [Functions](slides/u2-d21-functions/index.html)
+1. [Effective Dataviz](slides/u2-d14-effective-dataviz/index.html)
 
-- [Iteration](slides/u2-d22-iteration/index.html)
+1. [Web Scrape](slides/u2-d18-web-scrape/index.html)
+
+1. [Functions](slides/u2-d21-functions/index.html)
+
+1. [Iteration](slides/u2-d22-iteration/index.html)
+
+
+

@@ -42,7 +42,7 @@ c("u1-d01-welcome", "u1-d02-toolkit-r", "u2-d02-ggplot2", "u2-d06-grammar-wrangl
 dir_info(docs_folder, glob = "*.Rmd", recurse = TRUE) %>%  
   #filter(!str_detect(path, "setup")) %>%
   #head(1) %>%
-  #filter(str_detect(path, "import-sas")) %>% 
+  #filter(str_detect(path, "homepage")) %>% 
   pull(path) %>% 
   walk(~{
     temp_file <- path(tempfile(), ext = "R")
