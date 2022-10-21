@@ -60,6 +60,15 @@ knitr::include_graphics("img/dplyr-part-of-tidyverse.png")
 
 ---
 
+.your-turn[
+.light-blue[.hand[Follow along:]] 
+
+- You are welcome to try out the code we review on the slides. In your project, go to **exercises/04-dplyr.qmd**
+
+]
+
+---
+
 ## Data: Hotel bookings
 
 - Data from two hotels: one resort and one city hotel

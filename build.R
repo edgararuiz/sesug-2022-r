@@ -43,9 +43,9 @@ copy_from_ds <- function() {
 }
 
 dir_info(docs_folder, glob = "*.Rmd", recurse = TRUE) %>%  
-  #filter(!str_detect(path, "setup")) %>%
+  filter(!str_detect(path, "setup")) %>%
   #head(1) %>%
-  #filter(str_detect(path, "homepage")) %>% 
+  #filter(str_detect(path, "ggplot2")) %>% 
   pull(path) %>% 
   walk(~{
     temp_file <- path(tempfile(), ext = "R")

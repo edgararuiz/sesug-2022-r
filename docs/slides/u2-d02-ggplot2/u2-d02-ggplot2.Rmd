@@ -27,6 +27,14 @@ class: middle
 
 ---
 
+.your-turn[
+.light-blue[.hand[Follow along:]] 
+
+- You are welcome to try out the code we review on the slides. In your project, go to **exercises/03-ggplot2.qmd**
+
+]
+
+---
 ## ggplot2 $\in$ tidyverse
 
 .pull-left[
