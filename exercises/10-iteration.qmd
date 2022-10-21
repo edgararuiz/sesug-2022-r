@@ -1,0 +1,73 @@
+---
+Title: Iteration with R
+---
+
+
+```{r}
+df <- tibble(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10)
+)
+```
+
+```{r}
+#| eval: false
+#| 
+median(df)
+```
+
+```{r}
+for(i in 1:length(df)) {
+  median(df[[i]])
+}
+```
+
+```{r}
+for(i in 1:length(df)) {
+  print(median(df[[i]]))
+}
+```
+
+```{r}
+library(purrr)
+```
+
+```{r}
+map(df, median)
+```
+
+```{r}
+map_dbl(df, median)
+```
+
+```{r}
+#| eval: false
+#| 
+map_lgl(df, median)
+```
+
+```{r}
+df %>% 
+  map_dbl(median) %>% 
+  median()
+```
+
+```{r}
+map(df, ~ median(.x - 1))
+```
+
+```{r}
+df %>% 
+  transpose() %>% 
+  map(~ .x$a + .x$b + .x$c + .x$d)
+```
+
+```{r}
+df %>% 
+  transpose() %>% 
+  map_df(~ tibble(x = .x$a + .x$b + .x$c + .x$d))
+```
+
+

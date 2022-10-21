@@ -300,3 +300,14 @@ scrape_speech <- function(url){
   # Rest of your function code goes here...
 }
 ```
+
+---
+
+.your-turn[
+### .hand[Your turn!]
+.midi[
+
+- **exercises/10-iteration.qmd**
+
+]
+]

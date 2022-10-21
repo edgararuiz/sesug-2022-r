@@ -1,0 +1,97 @@
+---
+title: "R Functions"
+---
+
+```{r}
+my_function <- function() {
+  1
+}
+```
+
+```{r}
+my_function
+```
+
+```{r}
+my_function()
+```
+
+```{r}
+my_function <- function(x) {
+  x + 1
+}
+```
+
+```{r}
+my_function(1)
+```
+
+```{r}
+#| eval: false
+my_function()
+```
+
+```{r}
+my_function <- function(x = NA) {
+  x + 1
+}
+```
+
+```{r}
+my_function()
+```
+
+```{r}
+my_function(c(1,2,3))
+```
+
+```{r}
+my_function <- function(x = NA, y = NA) {
+  (x + 1) * y
+}
+```
+
+```{r}
+my_function(1)
+```
+
+```{r}
+my_function(1, 2)
+```
+```{r}
+my_function(y = 2, x = 1)
+```
+
+```{r}
+remove_variable <- function(data, x) {
+  data %>% 
+    select(-x)
+}
+```
+
+```{r}
+#| eval: false
+mtcars %>% 
+  remove_variable(mpg)
+```
+
+```{r}
+mtcars %>% 
+  remove_variable("mpg")
+```
+
+```{r}
+library(rlang)
+```
+
+```{r}
+remove_variable <- function(data, x) {
+  data %>% 
+    select(-{{x}})
+}
+```
+
+```{r}
+mtcars %>% 
+  remove_variable(mpg)
+```

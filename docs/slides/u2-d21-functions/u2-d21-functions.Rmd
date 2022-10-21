@@ -606,3 +606,14 @@ mean <- function(x){
   x * 3 
   }
 ```
+
+---
+
+.your-turn[
+### .hand[Your turn!]
+.midi[
+
+- **exercises/09-functions.qmd**
+
+]
+]
